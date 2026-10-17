@@ -9,8 +9,9 @@ jobs:
   job-template:
     strategy:
       matrix:
-        java-version: [ 11, 17, 21 ]
-    runs-on: ubuntu-latest
+        java-version: [ 17, 21 ]
+        os-kind: [ 'windows', 'linux' ]
+    runs-on: ${{matrix.os-kind}}-latest
     steps:
     - uses: actions/checkout@v6.1.0
     - uses: actions/setup-java@v4
