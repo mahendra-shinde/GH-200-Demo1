@@ -8,8 +8,8 @@ jobs:
     runs-on: windows-2025
     steps:
     - if: ${{ github.ref == 'refs/heads/main' }}
-      run:  "echo Hello $USER"
+      run:  "echo Hello $USERN"
       env:
-        USER: ${{ github.actor }}
+        USERN: ${{ github.actor }}
         
       
