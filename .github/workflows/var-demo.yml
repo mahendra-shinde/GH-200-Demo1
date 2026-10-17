@@ -1,9 +1,6 @@
 name: var-demo
 on: push
 
-env:
-  MESSAGE: Hello World !
-
 jobs:
   job-1:
     runs-on: ubuntu-24.04
@@ -16,3 +13,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - run: echo $MESSAGE
+        env:
+          MESSAGE: ${{ env.MESSAGE }}
+      
