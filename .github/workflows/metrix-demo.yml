@@ -9,10 +9,17 @@ jobs:
   job-template:
     strategy:
       matrix:
-        message: ['World', 'India', 'Maharashtra' ]
+        java-version: [ 11, 17, 21 ]
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'Hello from $MSG'
-        env:
-          MSG: ${{ matrix.message }}
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: 'termurin'
+        cache: maven
+    - run: mvn -B clean package
+    
+        
+        
         
