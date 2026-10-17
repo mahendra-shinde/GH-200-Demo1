@@ -10,10 +10,11 @@ jobs:
     - uses: actions/setup-java@v6.1.0
       with:
         java-version: 17
+        distribition: temurin
 
     - uses: actions/checkout@v7.0.1
 
-    - run: mvn clean compile
+    - run: mvn -B clean compile
   test:
     needs: build
     runs-on: ubuntu-latest
@@ -21,10 +22,11 @@ jobs:
     - uses: actions/setup-java@v6.1.0
       with:
         java-version: 17
+        distribution: temurin 
 
     - uses: actions/checkout@7.0.1
 
-    - run: mvn test
+    - run: mvn -B test
 
     
   
