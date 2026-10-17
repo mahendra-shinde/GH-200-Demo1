@@ -30,7 +30,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Publish JAR
-      uses: actions/upload-artrifact@v7.0.2
+      uses: actions/upload-artifact@v7.0.2
       with: 
         name: Jar-Package
         path: target/*.jar
